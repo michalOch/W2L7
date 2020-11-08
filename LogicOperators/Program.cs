@@ -16,7 +16,8 @@ namespace LogicOperators
             //Ex5();
             //Ex6();
             //Ex7();
-            Ex8();
+            //Ex8();
+            Ex9();
         }
         public static void Ex1()
         {
@@ -257,6 +258,23 @@ namespace LogicOperators
             {
                 Console.WriteLine("Kandydat nie dopuszczony do rekrutacji");
             }
+        }
+
+        public static void Ex9()
+        {
+            /*
+             * Napisz program, który odczyta temperaturę I zwróci nazwę jak w poniższych kryteriach
+             */
+            Console.Write("Podaj temperaturę zewnątrzną [C] : ");
+            double temp = double.Parse(Console.ReadLine());
+
+            string result = (temp < 0) ? "cholernie piździ" :
+                        (temp >= 0 && temp < 10) ? "Zimno" :
+                        (temp >= 10 && temp < 20) ? "Chłodno" :
+                        (temp >= 20 && temp < 30) ? "W sam raz" :
+                        (temp >= 30 && temp < 40) ? "Zaczyna być słabo, bo gorąco" : "A weź wyprowadzam się na Alaskę.";
+
+            Console.WriteLine(result);
         }
 
     }
