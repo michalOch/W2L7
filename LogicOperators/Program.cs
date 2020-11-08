@@ -9,7 +9,8 @@ namespace LogicOperators
         {
             //Ex1();
             //Ex2();
-            Ex3();
+            //Ex3();
+            Ex4();
         }
         public static void Ex1()
         {
@@ -78,6 +79,38 @@ namespace LogicOperators
                     Console.Clear();
                 }
             }
+        }
+
+        public static void Ex4()
+        {
+            /*
+             * Napisz program w C#, który sprawdzi czy podany przez użytkownika rok jest rokiem przestępnym.
+             */
+            int year = 0;
+            while (year == 0)
+            {
+                Console.Write("Podaj rok (RRRR): ");
+                string result = Console.ReadLine();
+
+                if (int.TryParse(result, out year))
+                {
+                    if (isLeapYear(year))
+                        Console.WriteLine($"{year} jest rokiem przestępnym");
+                    else
+                        Console.WriteLine($"{year} nie jest rokiem przestępnym");
+                }
+                else
+                {
+                    Console.WriteLine("Podano nieprawidłową wartość. Spróbuj ponownie...");
+                    Thread.Sleep(500);
+                    Console.Clear();
+                }
+            }
+        }
+
+        public static bool isLeapYear(int year)
+        {
+            return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
         }
     }
 }
