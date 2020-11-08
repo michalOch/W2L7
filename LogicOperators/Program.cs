@@ -12,12 +12,20 @@ namespace LogicOperators
         }
         public static void Ex1()
         {
+            /*
+             * Napisz program w C#, który stworzy dwie zmienne int i sprawdzi czy są one równe czy nie.
+             */
+
             int firstNubmer = 5;
             int secondNumber = 5;
             Console.WriteLine($"{firstNubmer} == {secondNumber} ? : {firstNubmer == secondNumber}");
         }
         public static void Ex2()
         {
+            /*
+             * Napisz program w C#, który sprawdzi czy podana przez użytkownika liczba jest parzysta czy nieparzysta.
+             */
+
             int number = 0;
             while(number == 0)
             {
@@ -25,14 +33,12 @@ namespace LogicOperators
                 string result = Console.ReadLine();
                 if(int.TryParse(result, out number))
                 {
-                    if(number%2 == 0)
-                    {
-                        Console.WriteLine($"Liczba {number} jest parzysta");
-                    }
+                    bool isEven = number % 2 == 0 ? true : false;
+
+                    if(isEven)
+                        Console.WriteLine($"{number} jest liczbą parzystą");
                     else
-                    {
-                        Console.WriteLine($"Liczba {number} jest nie parzysta");
-                    }
+                        Console.WriteLine($"{number} jest liczbą nieparzystą");
                 }
                 else
                 {
