@@ -11,7 +11,8 @@ namespace LogicOperators
             //Ex2();
             //Ex3();
             //Ex4();
-            Ex5();
+            //Ex5();
+            Ex6();
         }
         public static void Ex1()
         {
@@ -164,6 +165,12 @@ namespace LogicOperators
                     Console.Clear();
                 }
             }
+        }
+
+
+        public static void Ex6()
+        {
+
         }
     }
 }
