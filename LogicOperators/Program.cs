@@ -15,7 +15,8 @@ namespace LogicOperators
             //Ex4();
             //Ex5();
             //Ex6();
-            Ex7();
+            //Ex7();
+            Ex8();
         }
         public static void Ex1()
         {
@@ -237,6 +238,26 @@ namespace LogicOperators
             return min;
         }
 
+        public static void Ex8()
+        {
+            /*
+             * Napisz program, który sprawdzi, czy kandydat może ubiegać się o miejsce na studiach
+             */
+
+            int mathResults = 80;
+            int physicsResult = 71;
+            int chemistryResult = 0;
+
+            if (mathResults > 70 && physicsResult > 55 && chemistryResult > 45 && mathResults + physicsResult + chemistryResult > 180 ||
+                mathResults + physicsResult > 150 || mathResults + chemistryResult > 150)
+            {
+                Console.WriteLine("Kandydat dopuszczony do rekrutacji");
+            }
+            else
+            {
+                Console.WriteLine("Kandydat nie dopuszczony do rekrutacji");
+            }
+        }
 
     }
 }
