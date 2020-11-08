@@ -2,11 +2,18 @@
 
 namespace LogicOperators
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Ex1();
+        }
+        public static void Ex1()
+        {
+            int firstNubmer = 5;
+            int secondNumber = 5;
+
+            Console.WriteLine($"{firstNubmer} == {secondNumber} ? : {firstNubmer == secondNumber}");
         }
     }
 }

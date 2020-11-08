@@ -1,0 +1,13 @@
+D:\Dev\LogicOperators\LogicOperators\bin\Debug\netcoreapp3.1\LogicOperators.exe
+D:\Dev\LogicOperators\LogicOperators\bin\Debug\netcoreapp3.1\LogicOperators.deps.json
+D:\Dev\LogicOperators\LogicOperators\bin\Debug\netcoreapp3.1\LogicOperators.runtimeconfig.json
+D:\Dev\LogicOperators\LogicOperators\bin\Debug\netcoreapp3.1\LogicOperators.runtimeconfig.dev.json
+D:\Dev\LogicOperators\LogicOperators\bin\Debug\netcoreapp3.1\LogicOperators.dll
+D:\Dev\LogicOperators\LogicOperators\bin\Debug\netcoreapp3.1\LogicOperators.pdb
+D:\Dev\LogicOperators\LogicOperators\obj\Debug\netcoreapp3.1\LogicOperators.csprojAssemblyReference.cache
+D:\Dev\LogicOperators\LogicOperators\obj\Debug\netcoreapp3.1\LogicOperators.AssemblyInfoInputs.cache
+D:\Dev\LogicOperators\LogicOperators\obj\Debug\netcoreapp3.1\LogicOperators.AssemblyInfo.cs
+D:\Dev\LogicOperators\LogicOperators\obj\Debug\netcoreapp3.1\LogicOperators.csproj.CoreCompileInputs.cache
+D:\Dev\LogicOperators\LogicOperators\obj\Debug\netcoreapp3.1\LogicOperators.dll
+D:\Dev\LogicOperators\LogicOperators\obj\Debug\netcoreapp3.1\LogicOperators.pdb
+D:\Dev\LogicOperators\LogicOperators\obj\Debug\netcoreapp3.1\LogicOperators.genruntimeconfig.cache
