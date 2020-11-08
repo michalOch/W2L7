@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.Serialization;
 using System.Threading;
 
@@ -13,7 +14,8 @@ namespace LogicOperators
             //Ex3();
             //Ex4();
             //Ex5();
-            Ex6();
+            //Ex6();
+            Ex7();
         }
         public static void Ex1()
         {
@@ -201,5 +203,40 @@ namespace LogicOperators
             }
 
         }
+
+        public static void Ex7()
+        {
+            /*
+             * Napisz program w C#, który pobierze 3 liczby od użytkownika i sprawdzi, która jest największa
+             */
+
+            Console.Write("Podaj 3 liczby rozdzielone przecinkiem: ");
+            string[] result = Console.ReadLine().Split(",");
+
+            int a = int.Parse(result[0]);
+            int b = int.Parse(result[1]);
+            int c = int.Parse(result[2]);
+
+           Console.WriteLine($"Największa liczba to: {Max(a,b,c)}");
+           Console.WriteLine($"Najmniejsza liczba to: {Min(a, b, c)}");
+        }
+
+        public static int Max(int a, int b, int c)
+        {
+            int max = a;
+            if (b > max) max = b;
+            if (c > max) max = c;
+            return max;
+        }
+
+        public static int Min(int a, int b, int c)
+        {
+            int min = a;
+            if (b < min) min = b;
+            if (c < min) min = c;
+            return min;
+        }
+
+
     }
 }
