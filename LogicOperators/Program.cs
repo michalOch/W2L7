@@ -10,7 +10,8 @@ namespace LogicOperators
             //Ex1();
             //Ex2();
             //Ex3();
-            Ex4();
+            //Ex4();
+            Ex5();
         }
         public static void Ex1()
         {
@@ -111,6 +112,11 @@ namespace LogicOperators
         public static bool isLeapYear(int year)
         {
             return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
+        }
+
+        public static void Ex5()
+        {
+
         }
     }
 }
