@@ -18,7 +18,8 @@ namespace LogicOperators
             //Ex7();
             //Ex8();
             //Ex9();
-            Ex11();
+            //Ex11();
+            Ex12();
         }
         public static void Ex1()
         {
@@ -313,6 +314,13 @@ namespace LogicOperators
                 }
             }
             Console.WriteLine($"Ocena {grade} to {gradeDescription}");
+        }
+
+        public static void Ex12()
+        {
+            /*
+             * Napisz program, który pobierze numer dnia tygodnia i wyświetli jego nazwę
+             */
         }
     }
 }
