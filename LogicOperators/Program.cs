@@ -17,7 +17,8 @@ namespace LogicOperators
             //Ex6();
             //Ex7();
             //Ex8();
-            Ex9();
+            //Ex9();
+            Ex11();
         }
         public static void Ex1()
         {
@@ -36,15 +37,15 @@ namespace LogicOperators
              */
 
             int number = 0;
-            while(number == 0)
+            while (number == 0)
             {
                 Console.Write("Podaj liczbę całkowitą: ");
                 string result = Console.ReadLine();
-                if(int.TryParse(result, out number))
+                if (int.TryParse(result, out number))
                 {
                     bool isEven = number % 2 == 0 ? true : false;
 
-                    if(isEven)
+                    if (isEven)
                         Console.WriteLine($"{number} jest liczbą parzystą");
                     else
                         Console.WriteLine($"{number} jest liczbą nieparzystą");
@@ -56,7 +57,7 @@ namespace LogicOperators
                     Console.Clear();
                 }
             }
-            
+
         }
 
         public static void Ex3()
@@ -72,9 +73,9 @@ namespace LogicOperators
                 string result = Console.ReadLine();
                 if (int.TryParse(result, out number))
                 {
-                    if(number > 0)
+                    if (number > 0)
                         Console.WriteLine($"{number} jest liczbą dodatnią");
-                    else if(number < 0)
+                    else if (number < 0)
                         Console.WriteLine($"{number} jest liczbą ujemną");
                     else
                         Console.WriteLine($" Podana liczba jest równa 0");
@@ -134,28 +135,28 @@ namespace LogicOperators
                 string possiblePossition = string.Empty;
                 if (int.TryParse(result, out age) && age > 0)
                 {
-                    if(age > 0 && age < 18)
+                    if (age > 0 && age < 18)
                     {
                         possiblePossition = "Jesteś za młody na dostępne stanowiska.";
                     }
-                    else if(age >= 18 && age < 21)
+                    else if (age >= 18 && age < 21)
                     {
                         possiblePossition = "Możesz zostać radnym.";
                     }
                     else if (age >= 21 && age < 30)
                     {
                         possiblePossition = "Możesz zostać posłem";
-                        if(age >= 25)
+                        if (age >= 25)
                         {
                             possiblePossition += " oraz wójtem, burmistrzem i prezydentem miasta.";
                         }
                     }
-   
-                    else if(age >= 30 && age < 35)
+
+                    else if (age >= 30 && age < 35)
                     {
                         possiblePossition = "Możesz zostać senatorem.";
                     }
-                    else if( age >= 35)
+                    else if (age >= 35)
                     {
                         possiblePossition = "Możesz zostać prezydentem.";
                     }
@@ -219,8 +220,8 @@ namespace LogicOperators
             int b = int.Parse(result[1]);
             int c = int.Parse(result[2]);
 
-           Console.WriteLine($"Największa liczba to: {Max(a,b,c)}");
-           Console.WriteLine($"Najmniejsza liczba to: {Min(a, b, c)}");
+            Console.WriteLine($"Największa liczba to: {Max(a, b, c)}");
+            Console.WriteLine($"Najmniejsza liczba to: {Min(a, b, c)}");
         }
 
         public static int Max(int a, int b, int c)
@@ -277,5 +278,41 @@ namespace LogicOperators
             Console.WriteLine(result);
         }
 
+        public static void Ex11()
+        {
+            /*
+             * Napisz program, który zmieni ocenę ucznia na jej opis
+             */
+           
+            string gradeDescription = string.Empty;
+            int grade = 0;
+
+            while (grade <= 0 || grade > 6)
+            {
+                Console.WriteLine("Podaj ocenę aby zobczyc jej opis (1-6): ");
+                string choice = Console.ReadLine();
+
+                if (int.TryParse(choice, out grade) && !(grade > 6) && grade>0)
+                {
+                    gradeDescription = grade switch
+                    {
+                        1 => "Niedostateczny",
+                        2 => "Dopuszczający",
+                        3 => "Dostateczny",
+                        4 => "Dobry",
+                        5 => "Bardzo dobry",
+                        6 => "Celujący",
+                        _ => "Złe dane"
+                    };
+                }
+                else
+                {
+                    Console.WriteLine("Podano nieprawidłową wartość. Spróbuj ponownie...");
+                    Thread.Sleep(500);
+                    Console.Clear();
+                }
+            }
+            Console.WriteLine($"Ocena {grade} to {gradeDescription}");
+        }
     }
 }
