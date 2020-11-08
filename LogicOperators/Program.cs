@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Threading;
 
 namespace LogicOperators
@@ -170,6 +171,34 @@ namespace LogicOperators
 
         public static void Ex6()
         {
+            /*
+             * Napisz program w C#, który pobierze wzrost użytkownika i przypisze mu wymyśloną kategorię wzrostu
+             */
+            double userHeight = 0;
+            while (userHeight <= 0)
+            {
+                Console.Write("Podaj wzrost użytkownika (cm): ");
+                string result = Console.ReadLine();
+                string userDescription = string.Empty;
+
+                if (double.TryParse(result, out userHeight) && userHeight > 0)
+                {
+                    userDescription = (userHeight <= 140) ? "Jesteś krasnoludem." :
+                        (userHeight > 140 && userHeight <= 165) ? "Jesteś niski." :
+                        (userHeight > 165 && userHeight <= 175) ? "Średni wzrost." :
+                        (userHeight > 175 && userHeight <= 190) ? "Trzeba przyznać jesteś wysoki." :
+                        "Jesteś olbrzymem.";
+
+                    Console.WriteLine(userDescription);
+                }
+
+                else
+                {
+                    Console.WriteLine("Podano nieprawidłową wartość. Spróbuj ponownie...");
+                    Thread.Sleep(500);
+                    Console.Clear();
+                }
+            }
 
         }
     }
