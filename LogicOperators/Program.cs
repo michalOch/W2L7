@@ -8,7 +8,8 @@ namespace LogicOperators
         public static void Main(string[] args)
         {
             //Ex1();
-            Ex2();
+            //Ex2();
+            Ex3();
         }
         public static void Ex1()
         {
@@ -48,6 +49,35 @@ namespace LogicOperators
                 }
             }
             
+        }
+
+        public static void Ex3()
+        {
+            /*
+             * Napisz program w C#, który sprawdzi czy podana przez użytkownika liczba jest dodatnia czy ujemna.
+             */
+
+            int number = 0;
+            while (number == 0)
+            {
+                Console.Write("Podaj liczbę całkowitą: ");
+                string result = Console.ReadLine();
+                if (int.TryParse(result, out number))
+                {
+                    if(number > 0)
+                        Console.WriteLine($"{number} jest liczbą dodatnią");
+                    else if(number < 0)
+                        Console.WriteLine($"{number} jest liczbą ujemną");
+                    else
+                        Console.WriteLine($" Podana liczba jest równa 0");
+                }
+                else
+                {
+                    Console.WriteLine("Podano nieprawidłową liczbę");
+                    Thread.Sleep(500);
+                    Console.Clear();
+                }
+            }
         }
     }
 }
