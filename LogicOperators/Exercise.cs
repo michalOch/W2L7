@@ -348,8 +348,73 @@ namespace LogicOperators
             /*
              * Napisz program, który będzie posiadał proste menu (wg. Wzoru poniżej) I będzie prostym kalkulatorem (na 2 liczbach)
              */
+            bool repeatLoop = true;
+            while(repeatLoop)
+            {
+                ShowHeadLine();
+                double firstNumber = GetNumber("Podaj pierwszą liczbę:");
+                double secondNumber = GetNumber("Podaj drugą liczbę:");
 
+                Console.WriteLine("\r\nPodaj numer operacji do wykonania:");
+                Console.WriteLine("1. Dodawanie");
+                Console.WriteLine("2. Odejmowanie");
+                Console.WriteLine("3. Mnożenie");
+                Console.WriteLine("4. Dzielenie");
 
+                int operation = int.Parse(Console.ReadLine());
+
+                string result = operation switch
+                {
+                    1 => $"{firstNumber} + {secondNumber} = {Add(firstNumber,secondNumber)}",
+                    2 => $"{firstNumber} - {secondNumber} = {Substract(firstNumber,secondNumber)}",
+                    3 => $"{firstNumber} * {secondNumber} = {Multiply(firstNumber,secondNumber)}",
+                    4 => $"{firstNumber} / {secondNumber} = {Divade(firstNumber,secondNumber)}"
+                };
+                Console.WriteLine(result);
+            }
+            
+        }
+        public static void ShowHeadLine()
+        {
+            Console.WriteLine("*************************************************");
+            Console.WriteLine("------------------- Kalkulator ------------------");
+            Console.WriteLine("*************************************************");
+        }
+
+        public static double GetNumber(string message)
+        {
+            double result = 0.0;
+            while (result <= 0)
+            {
+                Console.Write(message);
+                string number = Console.ReadLine();
+                if (!(double.TryParse(number, out result) || result < 0))
+                {
+                    Console.WriteLine("Podano nieprawidłową wartość. Spróbuj ponownie...");
+                    Thread.Sleep(500);
+                    Console.Clear();
+                }
+            }
+            return result;
+        }
+        public static double Add(double a, double b)
+        {
+            return a + b;
+        }
+
+        public static double Substract(double a, double b)
+        {
+            return a - b;
+        }
+
+        public static double Multiply(double a, double b)
+        {
+            return a * b;
+        }
+
+        public static double Divade(double a, double b)
+        {
+            return a / b;
         }
     }
 }
