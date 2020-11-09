@@ -342,5 +342,14 @@ namespace LogicOperators
             }
 
         }
+
+        public static void Ex13()
+        {
+            /*
+             * Napisz program, który będzie posiadał proste menu (wg. Wzoru poniżej) I będzie prostym kalkulatorem (na 2 liczbach)
+             */
+
+
+        }
     }
 }

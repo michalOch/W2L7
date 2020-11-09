@@ -21,7 +21,8 @@ namespace LogicOperators
             //Exercise.Ex9();
             //Exercise.Ex11();
             //Exercise.Ex12();
-            Exercise.Ex10();
+            //Exercise.Ex10();
+            Exercise.Ex13();
         }
         
 
