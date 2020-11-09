@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Serialization;
 using System.Threading;
 
@@ -321,6 +322,30 @@ namespace LogicOperators
             /*
              * Napisz program, który pobierze numer dnia tygodnia i wyświetli jego nazwę
              */
+            int day = 0;
+            WeekDay weekDay = WeekDay.Unassigned;
+
+            while (day <= 0)
+            {
+                Console.Write("Enter the day of the week: ");
+                string result = Console.ReadLine();
+                day = int.Parse(result);
+
+                if (Enum.IsDefined(typeof(WeekDay),day) && (day >0  && day <= 7))
+                {
+                    weekDay = (WeekDay)Enum.Parse(typeof(WeekDay), result);
+                    Console.WriteLine($"\nDay {day} is {weekDay}");
+                }
+                else
+                {
+                    day = 0;
+                    Console.WriteLine("Podano nieprawidłową wartość. Spróbuj ponownie...");
+                    Thread.Sleep(500);
+                    Console.Clear();
+                }
+            }
+            
         }
+
     }
 }
