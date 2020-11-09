@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading;
 
@@ -355,13 +356,7 @@ namespace LogicOperators
                 double firstNumber = GetNumber("Podaj pierwszą liczbę:");
                 double secondNumber = GetNumber("Podaj drugą liczbę:");
 
-                Console.WriteLine("\r\nPodaj numer operacji do wykonania:");
-                Console.WriteLine("1. Dodawanie");
-                Console.WriteLine("2. Odejmowanie");
-                Console.WriteLine("3. Mnożenie");
-                Console.WriteLine("4. Dzielenie");
-
-                int operation = int.Parse(Console.ReadLine());
+                int operation = GetOperation();
 
                 string result = operation switch
                 {
@@ -370,7 +365,15 @@ namespace LogicOperators
                     3 => $"{firstNumber} * {secondNumber} = {Multiply(firstNumber,secondNumber)}",
                     4 => $"{firstNumber} / {secondNumber} = {Divade(firstNumber,secondNumber)}"
                 };
-                Console.WriteLine(result);
+
+                Console.WriteLine("\r\nWynik operacji: "+result);
+                Console.WriteLine("\r\nNaciśnij dowolny klawisz aby ponownie uruchomić kalkulator lub x żeby zamknać: ");
+
+                string choise = Console.ReadLine();
+                if(choise == "x")
+                {
+                    repeatLoop = false;
+                }
             }
             
         }
@@ -394,6 +397,29 @@ namespace LogicOperators
                     Thread.Sleep(500);
                     Console.Clear();
                 }
+            }
+            return result;
+        }
+
+        public static int GetOperation()
+        {
+            int result = 0;
+            while (result <= 0 || result > 4)
+            {
+                Console.WriteLine("\r\nPodaj numer operacji do wykonania:");
+                Console.WriteLine("1. Dodawanie");
+                Console.WriteLine("2. Odejmowanie");
+                Console.WriteLine("3. Mnożenie");
+                Console.WriteLine("4. Dzielenie");
+
+                string operation = Console.ReadLine();
+                if ( !int.TryParse(operation, out result) || result <=0 || result > 4 )
+                {
+                    Console.WriteLine("Podano nieprawidłową wartość. Spróbuj ponownie...");
+                    Thread.Sleep(500);
+                    Console.Clear();
+                }
+
             }
             return result;
         }
