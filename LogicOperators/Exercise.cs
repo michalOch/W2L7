@@ -353,8 +353,8 @@ namespace LogicOperators
             while(repeatLoop)
             {
                 ShowHeadLine();
-                double firstNumber = GetNumber("Podaj pierwszą liczbę:");
-                double secondNumber = GetNumber("Podaj drugą liczbę:");
+                double firstNumber = GetNumber("Podaj pierwszą liczbę: ");
+                double secondNumber = GetNumber("Podaj drugą liczbę: ");
 
                 int operation = GetOperation();
 
@@ -440,7 +440,15 @@ namespace LogicOperators
 
         public static double Divade(double a, double b)
         {
-            return a / b;
+            if(b != 0)
+            {
+                return a / b;
+            }
+            else 
+            {
+                Console.WriteLine("Nie można dzielić przez 0 - bład argumentów" );
+                return -1;
+            }
         }
     }
 }
