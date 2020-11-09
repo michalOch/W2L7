@@ -223,25 +223,11 @@ namespace LogicOperators
             int b = int.Parse(result[1]);
             int c = int.Parse(result[2]);
 
-            Console.WriteLine($"Największa liczba to: {Max(a, b, c)}");
-            Console.WriteLine($"Najmniejsza liczba to: {Min(a, b, c)}");
+            Console.WriteLine($"Największa liczba to: {Helpers.FindMax(a, b, c)}");
+            Console.WriteLine($"Najmniejsza liczba to: {Helpers.FindMin(a, b, c)}");
+
         }
 
-        public static int Max(int a, int b, int c)
-        {
-            int max = a;
-            if (b > max) max = b;
-            if (c > max) max = c;
-            return max;
-        }
-
-        public static int Min(int a, int b, int c)
-        {
-            int min = a;
-            if (b < min) min = b;
-            if (c < min) min = c;
-            return min;
-        }
 
         public static void Ex8()
         {
@@ -352,7 +338,25 @@ namespace LogicOperators
         {
             /*
              * Napisz program, który sprawdzi, czy z 3 podanych długości można stworzyć trójkąt
+             * Aby z trzech odcinków zbudować trójkąt, najdłuższy z nich musi być krótszy niż suma długość dwóch pozostałych.
              */
+
+            Console.Write("Podaj 3 liczby całkowite rozdzielone przecinkiem: ");
+            string[] result = Console.ReadLine().Split(",");
+
+            int a = int.Parse(result[0]);
+            int b = int.Parse(result[1]);
+            int c = int.Parse(result[2]);
+
+            if( (a+b >c) || (a+c >b) || (b + c > a))
+            {
+                Console.WriteLine($"Z odcinków od długościach {a}, {b}, {c} można zbudować trójkąt");
+            }
+            else
+            {
+                Console.WriteLine($"Z odcinków od długościach {a}, {b}, {c} nie można zbudować trójkąt");
+            }
+
         }
 
     }
