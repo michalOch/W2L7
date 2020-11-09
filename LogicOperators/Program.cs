@@ -20,7 +20,8 @@ namespace LogicOperators
             //Ex8();
             //Ex9();
             //Ex11();
-            Ex12();
+            //Ex12();
+            Ex10();
         }
         public static void Ex1()
         {
@@ -345,6 +346,13 @@ namespace LogicOperators
                 }
             }
             
+        }
+
+        public static void Ex10()
+        {
+            /*
+             * Napisz program, który sprawdzi, czy z 3 podanych długości można stworzyć trójkąt
+             */
         }
 
     }
